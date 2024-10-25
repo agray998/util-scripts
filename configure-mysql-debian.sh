@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo -i
+sudo su root
 echo "Please enter the password for the mysql ADMIN user"
 read pword
 echo "Please enter mysql ROOT password (note: you will need to re-enter this password when prompted during mysql installation)"
