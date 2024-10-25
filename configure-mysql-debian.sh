@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo su root &&
+sudo -i <<EOFF
 echo "Please enter the password for the mysql ADMIN user"
 read pword
 echo "Please enter mysql ROOT password (note: you will need to re-enter this password when prompted during mysql installation)"
@@ -22,3 +22,4 @@ GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
 EOF
 
 systemctl restart mysql.service
+EOFF
