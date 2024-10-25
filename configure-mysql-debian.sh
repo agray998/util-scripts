@@ -1,12 +1,12 @@
 #!/bin/bash
 sudo -i <<EOFF
 apt-get update
-apt-get install extrepo
+apt-get install extrepo -y
 sed -i -e 's/# -/-/g;' /etc/extrepo/config.yaml
 extrepo update
 extrepo enable mysql
 apt-get update
-apt-get install mysql-server
+apt-get install mysql-server -y <<< $rootPword
 
 echo "bind-address = 0.0.0.0" >> /etc/mysql/mysql.conf.d/mysqld.cnf
 mysql -u root --password=$rootPword <<EOF
